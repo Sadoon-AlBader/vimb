@@ -1,6 +1,10 @@
 version = 3.6.0
 include config.mk
 
+CFLAGS += -flto -O3 -mtune=native -mcpu=native
+CXXFLAGS += -flto -O3 -mtune=native -mcpu=native
+LDFLAGS += -flto -O3 -mtune=native -mcpu=native
+
 all: version.h src.subdir-all
 
 version.h: Makefile $(wildcard .git/index)
